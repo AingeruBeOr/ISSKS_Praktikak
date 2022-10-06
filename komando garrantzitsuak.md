@@ -19,6 +19,7 @@
 - Klabe publikoa fitxategi batean lortzeko: `gpg --export -a <user_id> > <fitxategi_izena>.key` edo `gpg --export -a <user_id> --output <fitxategi_izena>.key`
 - Klabe pribatua esportatzeko: `gpg --export-private-key -a <user_id> > <fitxategi_izena>.key`
 - Klabe publiko bat sisteman importatzeko: `gpg --import <fitxategi_izena>.key`
+- Klabe bat GPG sistematik ezabatzeko: `gpg --delete-keys <gako_ID>`
 
 ## 2.2 Zifraketa
 
@@ -32,7 +33,7 @@
 - Norbaiteko konfiantza maila aldatzeko: `gpg --edit-key` , trust , quit (edo q)
 - Artxibo bat sinatzeko: `gpg --output Artxiboa.sig --sign Artxiboa.pdf`
 - Fitxategi bat egiaztatzeko GPG sisteman kargatuta dugun identitate batena dela benetan: `gpg --output Artxiboa.sig --sign Artxiboa.pdf`
-- Klabe bat GPG sistematik ezabatzeko: `gpg --delete-keys <gako_ID>`
+- Fitxategi baten sinadura konprobatzeko: `gpg --verify <fitxategia>`
 
 ## 2.4 Git-en commit-etan sinadura aplikatu
 
