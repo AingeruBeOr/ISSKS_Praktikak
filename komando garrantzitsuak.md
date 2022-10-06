@@ -24,6 +24,7 @@
 ## 2.2 Zifraketa
 
 - Fitxategi bat zifratzeko: `gpg -e <fitxategi_izena>`
+- Fitxategi bat zifratu GPG sisteman dugun beste pertsona baten klabe publikoarekin: `gpg -e -r <user_ID_public_key> -a <fitxategia>`
 - Fitxategi bat desenkriptatzeko: `gpg -d <fitxategi_izena>`
 - Fitxategi bat desnekriptatzeko, eta beste fitxategi batean gordetzeko: `gpg -d <fitxategi_zifratua> > <fitxategi_dezifratua>`
 
