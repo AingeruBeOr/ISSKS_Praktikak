@@ -1,48 +1,47 @@
-# 1. Laburpen algoritmoak eta estenografia
+# 1.
 
-- Fitxategi/direktorio baten MD5 hash-a kalkulatu: `md5sum <fitx_direk>`
-- StegoSuite deskargatu eta instalatu: `sudo apt install stegosuite`
-- StegoSuite aplikazioaren GUI ireki mezua ezkutua aurkitzeko: `stegosuite`
+- `md5sum <fitx_direk>`
+- `sudo apt install stegosuite`
+- `stegosuite`
 
-# 2. GnuPG (GPG)
+# 2. 
 
-- GnuPG (GPG) instalatu: `sudo apt install gpg`
-- GPG-ren laguntza erabili: `gpg --help`
+- `sudo apt install gpg`
+- `gpg --help`
 
-## 2.1 Gakoak sortu
+## 2.1 
 
-- GPG-n gako pare bat, pribatua eta publikoa, sortu: `gpg --generate-key`
-- Gakoak bere sorkuntzan personalizatzeko: `gpg --full-generate-key`
-- Gure GPG sisteman sortuta dauden gakoak ikusteko: `gpg --list-keys`
-- Errebokazio ziurtagiria sortzeko: `gpg --generate-revocation <user_id>`
-- Klabe publikoa pantailatik ikusteko: `gpg --export -a <user_id>`
-- Klabe publikoa fitxategi batean lortzeko: `gpg --export -a <user_id> > <fitxategi_izena>.key` edo `gpg --export -a <user_id> --output <fitxategi_izena>.key`
-- Klabe pribatua esportatzeko: `gpg --export-private-key -a <user_id> > <fitxategi_izena>.key`
-- Klabe publiko bat sisteman importatzeko: `gpg --import <fitxategi_izena>.key`
-- Klabe bat GPG sistematik ezabatzeko: `gpg --delete-keys <gako_ID>`
+- `gpg --generate-key`
+- `gpg --full-generate-key`
+- `gpg --list-keys`
+- `gpg --generate-revocation <user_id>`
+- `gpg --export -a <user_id>`
+- `gpg --export -a <user_id> > <fitxategi_izena>.key` edo `gpg --export -a <user_id> --output <fitxategi_izena>.key`
+- `gpg --export-private-key -a <user_id> > <fitxategi_izena>.key`
+- `gpg --import <fitxategi_izena>.key`
+- `gpg --delete-keys <gako_ID>`
 
-## 2.2 Zifraketa
+## 2.2
 
-- Fitxategi bat zifratzeko: `gpg -e <fitxategi_izena>`
-- Fitxategi bat zifratu GPG sisteman dugun beste pertsona baten klabe publikoarekin: `gpg -e -r <user_ID_public_key> -a <fitxategia>`
-- Fitxategi bat desenkriptatzeko: `gpg -d <fitxategi_izena>`
-- Fitxategi bat desnekriptatzeko, eta beste fitxategi batean gordetzeko: `gpg -d <fitxategi_zifratua> > <fitxategi_dezifratua>`
+- `gpg -e <fitxategi_izena>`
+- `gpg -e -r <user_ID_public_key> -a <fitxategia>`
+- `gpg -c <fitxategia>`
+- `gpg -d <fitxategi_izena>`
+- `gpg -d <fitxategi_zifratua> > <fitxategi_dezifratua>`
 
-## 2.3 Sinadurak
+## 2.3
 
-- Klabe publiko bat sinatzeko: `gpg --sign-key <correo_electronico>`
-- Norbaiteko konfiantza maila aldatzeko: `gpg --edit-key` , trust , quit (edo q)
-- Artxibo bat sinatzeko: `gpg --output Artxiboa.sig --sign Artxiboa.pdf`
-- Fitxategi bat egiaztatzeko GPG sisteman kargatuta dugun identitate batena dela benetan: `gpg --output Artxiboa.sig --sign Artxiboa.pdf`
-- Fitxategi baten sinadura konprobatzeko: `gpg --verify <fitxategia>`
+- `gpg --sign-key <correo_electronico>`
+- `gpg --edit-key` , trust , quit (edo q)
+- `gpg --output Artxiboa.sig --sign Artxiboa.pdf`
+- `gpg --output Artxiboa.sig --sign Artxiboa.pdf`
+- `gpg --verify <fitxategia>`
 
-## 2.4 Git-en commit-etan sinadura aplikatu
+## 2.4 
 
-- Gure makinan gure GPG gakoa sartzeko: `git config --global user.signingKey <GPG_gakoa>`
-- Commit bat sinatzeko (gure GitHub kontuan jadanik egon behar da gako publikoa igota): `git commit -S -m "<commit testua>"`
+- `git config --global user.signingKey <GPG_gakoa>`
+- `git commit -S -m "<commit testua>"`
 
-## 2.5 Beste batzuk
+## 2.5 
 
-- Klabe bat errebokatzeko: `gpg --gen-revoke <user_id>`
-
-GPG gakoa = ID user = fingerprint 
+- `gpg --gen-revoke <user_id>`
